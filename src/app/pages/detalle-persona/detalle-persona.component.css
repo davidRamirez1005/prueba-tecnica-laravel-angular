@@ -1,0 +1,84 @@
+h1{
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+button{
+  background-color: rgb(93, 93, 218);
+  border-radius: 10px;
+  border: transparent;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: white;
+}
+button:hover{
+  background-color: rgb(133, 133, 247);
+  transition: all 0.3s ease;
+}
+.error{
+  background-color: red;
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+}
+.error.show{
+  opacity: 1;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+	width: 60%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #030f1a;
+}
+
+th {
+  padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	text-align: left;
+  color: #c6def4;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(72, 103, 155, 0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(79, 92, 105, 0.2);
+				z-index: -1;
+			}
+		}
+	}
+}

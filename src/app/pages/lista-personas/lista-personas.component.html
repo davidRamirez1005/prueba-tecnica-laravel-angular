@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Listado de personas</h1>
+</div>
+
+<br><br>
+<div class="container2">
+	<table *ngIf="!loading">
+		<thead>
+			<tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Cédula</th>
+			</tr>
+		</thead>
+    <tbody>
+      <tr *ngFor="let persona of personas">
+        <td>{{ persona.nombre }}</td>
+        <td>{{ persona.apellido }}</td>
+        <td>{{ persona.email }}</td>
+        <td>{{ persona.telefono }}</td>
+        <td>{{ persona.cedula }}</td>
+      </tr>
+    </tbody>
+	</table>
+</div>
+<br><br>
+<div class="container" *ngIf="loading">
+  <h3>Cargando...</h3>
+</div>

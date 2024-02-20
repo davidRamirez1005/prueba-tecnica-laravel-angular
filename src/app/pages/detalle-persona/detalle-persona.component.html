@@ -1,0 +1,48 @@
+<div>
+  <h1>Detalle de persona</h1>
+  <br />
+  <div class="container">
+    <label for="">Ingrese Documento de la persona: </label>
+    <input
+      type="text"
+      [formControl]="searchPerson"
+      (keydown.enter)="changeHandler()"
+    />
+    <button (click)="changeHandler()">Buscar</button>
+  </div>
+  <br />
+  <div class="container">
+    <span
+      class="error"
+      [class.show]="searchPerson.invalid && searchPerson.touched"
+      >Numero invalido</span
+    >
+  </div>
+  <br /><br />
+  <div class="container2">
+    <table *ngIf="!loading">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Cédula</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of personas">
+          <td>{{ persona.nombre }}</td>
+          <td>{{ persona.apellido }}</td>
+          <td>{{ persona.email }}</td>
+          <td>{{ persona.telefono }}</td>
+          <td>{{ persona.cedula }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br><br>
+<div class="container" *ngIf="loading">
+  <h3>Cargando...</h3>
+</div>
